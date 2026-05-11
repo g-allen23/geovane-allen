@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <title>Geovane Allen</title>
 </head>
@@ -21,6 +21,9 @@
                 <a href="#sobre" class="menu-link">Sobre</a>
             </li>
             <li>
+                <a href="#tecnologias" class="menu-link">Tecnologias</a>
+            </li>
+            <li>
                 <a href="#projetos" class="menu-link">Projetos</a>
             </li>
             <li>
@@ -35,8 +38,10 @@
         <p class="cabecalho-subtitulo">Desenvolvedor Front End</p>
     </main>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre reveal-scroll" aria-label="Sobre">
+
         <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sublinhado sobre-sublinhado"></div>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
                 Sou um desenvolvedor front-end apaixonado por tecnologia e pelo impacto que o desenvolvimento web pode
@@ -52,8 +57,45 @@
         </div>
     </section>
 
-    <section id="projetos" class="projetos">
+    <section id="tecnologias" class="tecnologias reveal-scroll" aria-label="Tecnologias">
+
+        <h2 class="tecnologias-titulo">Tecnologias Dominantes</h2>
+        <div class="sublinhado"></div>
+        <div class="tecnologias-caixa">
+            <div class="tecnologias-card">
+                <img src="assets/images/tecnologias/html.png" alt="HTML" class="tecnologias-imagem">
+                <di class="caixa-textos-tecnologias">
+                    <h3 class="info-tecnologias">HTML5</h3>
+                    <p class="paragrafo-tecnologias">
+                        Utilizado para estruturar o conteúdo da aplicação front-end. Define elementos como cabeçalhos, seções, formulários, botões, imagens, listas, tabelas e componentes semânticos. Serve como a base da interface, organizando toda a hierarquia visual e funcional da página.
+                    </p>
+                </di>
+            </div>
+            <div class="tecnologias-card">
+                <img src="assets/images/tecnologias/css.png" alt="CSS" class="tecnologias-imagem">
+                <div class="caixa-textos-tecnologias">
+                    <h3 class="info-tecnologias">CSS3</h3>
+                    <p class="paragrafo-tecnologias">
+                        Responsável pela estilização e apresentação visual da aplicação. É utilizado para definir cores, tipografia, espaçamentos, layouts responsivos, animações, efeitos visuais e adaptação para diferentes dispositivos. Também permite construir interfaces modernas utilizando recursos como Flexbox e Grid Layout.
+                    </p>
+                </div>
+            </div>
+            <div class="tecnologias-card">
+                <img src="assets/images/tecnologias/javascript.png" alt="JavaScript" class="tecnologias-imagem">
+                <div class="caixa-textos-tecnologias">
+                    <h3 class="info-tecnologias">JavaScript</h3>
+                    <p class="paragrafo-tecnologias">
+                        Usado para adicionar interatividade e comportamento dinâmico à aplicação front-end. Permite manipular elementos da interface, validar formulários, consumir APIs, atualizar dados em tempo real, controlar eventos do usuário e criar experiências mais fluidas e responsivas dentro da aplicação.
+                    </p>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="projetos" class="reveal-scroll" aria-label="Projetos">
+
         <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="sublinhado"></div>
 
         <div class="divisao-projetos divisao-projetos-1">
             <a href="https://creche-escola-tia-avyla-demo.netlify.app/" target="_blank" class="projetos-link">
@@ -166,8 +208,10 @@
         </div>
     </section>
 
-    <section id="contato" class="contato">
+    <section id="contato" class="contato reveal-scroll" aria-label="Contato">
+
         <h2 class="contatos-titulo">Entre em Contato</h2>
+        <div class="sublinhado"></div>
         <form class="formulario-contato" id="formulario" onsubmit="enviarMensagem(event)">
             <div class="grupo-form">
                 <input type="text" placeholder="Nome" class="campo-form" id="nome">
@@ -178,6 +222,24 @@
             </div>
         </form>
     </section>
+
+    <section class="redes-sociais">
+        <a href="https://www.instagram.com/geovaneallen/" target="_blank" class="rede-sociais-link">
+            <img src="assets/images/icons/instagram.png" alt="Instagram" class="rede-social quadrado">
+        </a>
+
+        <a href="https://www.linkedin.com/in/geovaneallen/" target="_blank" class="rede-sociais-link">
+            <img src="assets/images/icons/linkedin.png" alt="LinkedIn" class="rede-social redondo">
+        </a>
+
+        <a href="https://github.com/g-allen23" target="_blank" class="rede-sociais-link">
+            <img src="assets/images/icons/github.png" alt="GitHub" class="rede-social redondo">
+        </a>
+    </section>
+
+    <footer class="rodape">
+        <p class="footer-copyright">© 2026 Geovane Allen. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>

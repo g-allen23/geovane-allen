@@ -6,11 +6,10 @@
 }
 
 :root {
-  --primaria: #4f46e5;
-  --secundaria: #7c3aed;
-  --escuro: #0f172a;
-  --maisEscuro: #0a0f1c;
-  --claro: #e2e8f0;
+  --escuro: #121212;
+  --claro: #e0e0e0;
+  --detalhes: #39ff14;
+  --sombra: #37ff147e; 
   --vidro: rgba(255, 255, 255, 0.1);
 }
 
@@ -27,7 +26,7 @@ body {
   position: fixed;
   top: 0;
   padding: 1.5rem;
-  background-color: rgba(15, 23, 42, 0.8);
+  background-color: rgba(0, 0, 0, 0.534);
   width: 100%;
   z-index: 100;
 }
@@ -53,7 +52,7 @@ body {
     left: 0;
     height: 2px;
     width: 0;
-    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    background: var(--detalhes);
     transition: width 0.3s ease;
   }
 
@@ -71,18 +70,23 @@ body {
 }
 
 .foto-perfil {
-  width: clamp(160px, 35vw, 260px);
+  width: clamp(160px, 30vw, 260px);
   height: clamp(160px, 35vw, 280px);
-  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 0 40px var(--sombra);
   margin-top: 50px;
   border-radius: 50%;
-  border: 4px solid var(--vidro);
+  border: 4px solid var(--escuro);
   animation: flutuar 3s ease-in-out infinite;
 }
 
 h1 {
   font-size: clamp(2rem, 8vw, 4rem);
-  color: var(--primaria);
+  background: linear-gradient(to right, var(--claro), var(--detalhes));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
   font-weight: bold;
   margin: clamp(1rem, 4vw, 2rem) 0;
   text-align: center;
@@ -104,16 +108,27 @@ h1 {
   font-size: clamp(1.75rem, 5vw, 3rem);
   color: var(--claro);
   text-align: center;
-  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.sublinhado {
+  border-bottom: 2px solid var(--detalhes);
+  margin: 0 auto;
+  width: 20%;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  margin-top: 8px;
+}
+
+.sobre-sublinhado {
+  width: 15%;
 }
 
 .sobre-caixa {
   padding: 2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
   border-radius: 16px;
   border: 1px solid var(--vidro);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.534);
   backdrop-filter: blur(10px);
 }
 
@@ -122,14 +137,73 @@ h1 {
   font-size: 1.2rem;
 }
 
-.projetos {
+.tecnologias {
   padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem);
+  display: grid;
+  margin-bottom: 50px;
 }
+
+.tecnologias-titulo {
+  font-size: clamp(1.75rem, 5vw, 3.2rem);
+  text-align: center;
+}
+
+.tecnologias-caixa {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.tecnologias-card {
+  max-height: 200px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  margin: 0.5rem;
+  background: rgba(0, 0, 0, 0.534);
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  transition: max-height 0.3s ease, gap 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    max-height: 500px;
+    gap: 2rem;
+  }
+}
+
+.tecnologias-imagem {
+  width: clamp(80px, 10vw, 120px);
+  height: clamp(80px, 10vw, 120px);  
+}
+
+.info-tecnologias {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.paragrafo-tecnologias {
+  color: rgba(226, 232, 240, 0.8);
+  line-height: 1.25rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.tecnologias-card:hover .paragrafo-tecnologias {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 .projetos-titulo {
   font-size: clamp(1.75rem, 5vw, 3.2rem);
   text-align: center;
-  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 .divisao-projetos {
@@ -156,7 +230,7 @@ h1 {
 }
 
 .projetos-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.534);
   border-radius: 16px;
   backdrop-filter: blur(5px);
   border: 1px solid var(--vidro);
@@ -165,7 +239,7 @@ h1 {
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 10px 20px var(--sombra);
     transform: translateY(5px) scale(1.08);
   }
 }
@@ -198,13 +272,12 @@ h1 {
 .contatos-titulo {
   font-size: clamp(1.75rem, 5vw, 2.8rem);
   text-align: center;
-  margin-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 .formulario-contato {
   max-width: min(600px, 95vw);
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--escuro);
   backdrop-filter: blur(5px);
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem) 0;
   border: 1px solid var(--vidro);
@@ -218,21 +291,26 @@ h1 {
 .campo-form {
   width: 100%;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.534);
   border-radius: 8px;
   color: var(--claro);
   border: 1px solid var(--vidro);
   outline: none;
+  transition: all 0.5s ease;
 
   &:focus {
-    border-color: var(--primaria);
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    border-color: var(--detalhes);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
   }
 }
 
+textarea {
+  resize: none;
+}
+
 .botao-form {
-  color: var(--claro);
-  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  color: var(--escuro);
+  background: var(--detalhes);
   margin-top: 10px;
   padding: 1rem 2rem;
   border: none;
@@ -244,8 +322,57 @@ h1 {
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    background-color: #1fc501;
+    box-shadow: 0 5px 15px #e0e0e07e;
   }
+
+  &:active {
+    transform: translateY(5px);
+    background-color: #1ec50100;
+  }
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 100px;
+  gap: 2rem;
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+.redes-sociais-link {
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.rede-social {
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #e0e0e07e;
+  }
+}
+
+.quadrado {
+  border-radius: 10px;
+}
+
+.redondo {
+  border-radius: 50%;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.534);
+  width: 100%;
+  z-index: 100;
 }
 
 .particulas {
@@ -257,8 +384,8 @@ h1 {
   z-index: -1;
   opacity: 0.5;
   background:
-    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+    radial-gradient(circle at 10% 20%, #585858b7 80%, transparent 30%),
+    radial-gradient(circle at 90% 80%, #4d4d4db7 80%, transparent 30%),
     var(--escuro);
 }
 
@@ -271,11 +398,15 @@ h1 {
     max-width: 900px;
     justify-content: center;
   }
-  
+
   .divisao-projetos > .projetos-link:nth-child(3) {
     grid-column: 1 / -1;
     justify-self: center;
     max-width: 400px;
+  }
+
+  .redes-sociais {
+    margin-top: 100px;
   }
 }
 
@@ -287,17 +418,17 @@ h1 {
     padding: 0 1rem;
     justify-items: center;
   }
-  
+
   .projetos-caixa {
     max-width: 350px;
   }
-  
+
   .menu {
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .navegacao {
     padding: clamp(0.8rem, 4vw, 1.2rem);
   }
@@ -309,16 +440,33 @@ h1 {
   .cabecalho-subtitulo {
     margin-bottom: -100px;
   }
-  
+
   .sobre-paragrafo {
     font-size: clamp(1rem, 3.5vw, 1.2rem);
     line-height: 1.6;
   }
-  
+
   .projetos-card:hover {
     transform: translateY(2px) scale(1.02);
   }
+
+  .redes-sociais {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    .redes-sociais {
+    margin-top: 100px;
+  };
+  }
 }
+
+@media (max-width: 562px) {
+  .tecnologias-caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 @media (max-width: 508px) {
   .foto-perfil {
@@ -335,16 +483,27 @@ h1 {
     gap: 1rem;
     font-size: 0.95rem;
   }
-  
+
   .formulario-contato {
     padding: 1.5rem 1rem 0;
   }
-  
+
   .botao-form {
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
   }
+
+  .rede-social {
+    width: 34px;
+    height: 34px;
+    margin-top: 100px;
+  }
+
+  .redes-sociais {
+    gap: 1rem;
+  }
 }
+
 
 @media (max-width: 414px) {
   h1 {
@@ -368,3 +527,35 @@ h1 {
     transform: translateY(-5%);
   }
 }
+
+/* Reveal no scroll (alternando esquerda/direita) */
+.reveal-scroll {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: transform, opacity;
+}
+
+.reveal-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Direção (mantém alternância, mas sem deslocamento lateral no layout) */
+.reveal-scroll[data-dir="left"],
+.reveal-scroll[data-dir="right"] {
+  transform: translate3d(0, 24px, 0);
+}
+
+
+@media (max-width: 768px) {
+  .reveal-scroll {
+    transform: translate3d(0, 18px, 0);
+  }
+
+  .reveal-scroll[data-dir="left"],
+  .reveal-scroll[data-dir="right"] {
+    transform: translate3d(0, 18px, 0);
+  }
+}
+
